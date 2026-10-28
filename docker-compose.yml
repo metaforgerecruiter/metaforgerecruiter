@@ -1,0 +1,82 @@
+services:
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  ai-service:
+    build: ./ai-service
+    environment:
+      PORT: 3002
+      AI_GATEWAY_TOKEN: ${AI_GATEWAY_TOKEN:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+    ports:
+      - "3002:3002"
+
+  backend:
+    build: ./backend
+    depends_on:
+      - mongo
+      - redis
+      - ai-service
+    environment:
+      PORT: 3001
+      MONGODB_URI: mongodb://mongo:27017/metaforge_recruiter_v2
+      MONGODB_DB_NAME: metaforge_recruiter_v2
+      REDIS_URL: redis://redis:6379
+      # Required: set JWT_SECRET in .env / vault (min 32 chars, not a placeholder).
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET must be set via env or vault}
+      JWT_EXPIRES_IN: 8h
+      CORS_ORIGINS: http://localhost:3000,http://localhost:8080
+      AI_GATEWAY_URL: http://ai-service:3002
+      AI_GATEWAY_TOKEN: ${AI_GATEWAY_TOKEN:-}
+      STORAGE_ROOT: /data/storage
+      # Demo seed is local-only; never enable in production deployments.
+      SEED_ON_START: ${SEED_ON_START:-false}
+      ALLOW_DEMO_LOGIN: ${ALLOW_DEMO_LOGIN:-false}
+      SEED_DEMO_PASSWORD: ${SEED_DEMO_PASSWORD:-}
+    volumes:
+      - app_storage:/data/storage
+    ports:
+      - "3001:3001"
+
+  workers:
+    build: ./workers
+    depends_on:
+      - redis
+    environment:
+      REDIS_URL: redis://redis:6379
+      WORKER_QUEUE: mrap:jobs
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    environment:
+      NEXT_PUBLIC_API_URL: /api/v1
+      API_PROXY_URL: http://backend:3001
+    ports:
+      - "3000:3000"
+
+  caddy:
+    image: caddy:2-alpine
+    depends_on:
+      - frontend
+      - backend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+
+volumes:
+  mongo_data:
+  app_storage:

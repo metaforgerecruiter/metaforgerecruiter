@@ -1,0 +1,18 @@
+<svg width="220" height="50" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mfGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6B3BF6" />
+      <stop offset="50%" stop-color="#5833E0" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    <linearGradient id="mfGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#6B3BF6" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="5" width="40" height="40" rx="12" fill="url(#mfGrad1)" />
+  <path d="M12 33V17L22 26L32 17V33H27V23.5L22 28.5L17 23.5V33H12Z" fill="white" />
+  <path d="M22 28.5L27 23.5V33H24V29.5L22 31.5L20 29.5V33H17V23.5L22 28.5Z" fill="url(#mfGrad2)" opacity="0.9" />
+  <text x="52" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="17" fill="#0F172A" letter-spacing="1.5">METAFORGE</text>
+  <text x="52" y="39" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="9" fill="#6B3BF6" letter-spacing="2">IT SOLUTIONS</text>
+</svg>

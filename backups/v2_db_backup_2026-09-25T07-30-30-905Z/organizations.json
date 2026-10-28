@@ -1,0 +1,13 @@
+[
+  {
+    "_id": "6ab4f38ff2e0e1823c038948",
+    "name": "MetaForge",
+    "slug": "metaforge",
+    "tier": "Professional",
+    "active": true,
+    "schemaVersion": 1,
+    "createdAt": "2026-09-24T09:55:28.000Z",
+    "updatedAt": "2026-09-24T09:55:28.000Z",
+    "__v": 0
+  }
+]

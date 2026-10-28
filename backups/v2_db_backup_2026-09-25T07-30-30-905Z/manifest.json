@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-09-25T07-30-30-905Z",
+  "database": "metaforge_recruiter_v2",
+  "host": "127.0.0.1:27017",
+  "collections": {
+    "ai_match_scores": 0,
+    "submission_histories": 0,
+    "teams": 0,
+    "candidate_blacklist": 0,
+    "recruiter_analytics": 0,
+    "email_templates": 0,
+    "organizations": 1,
+    "users": 0,
+    "interview_feedbacks": 0,
+    "requirement_histories": 0,
+    "interviews": 0,
+    "saved_searches": 0,
+    "roles_permissions": 0,
+    "notifications": 0,
+    "ai_parsing_jobs": 0,
+    "submissions": 0,
+    "activity_logs": 0,
+    "candidates": 0,
+    "clients": 0,
+    "offers": 0,
+    "requirements": 0,
+    "file_metadata": 0,
+    "candidate_documents": 0
+  }
+}

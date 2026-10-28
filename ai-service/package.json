@@ -1,0 +1,11 @@
+{
+  "name": "metaforge-ai-service",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Isolated AI gateway for MetaForge Recruiter V2",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "start:dev": "node src/server.js"
+  }
+}

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-background: #F5F7FA;
+  --color-foreground: #111827;
+  --color-primary: #1B4FD8;
+  --color-primary-foreground: #FFFFFF;
+  --color-border: #E4E8EF;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ENFORCE SINGLE UNIFIED FONT STYLE (INTER) ACROSS ENTIRE APPLICATION */
+*,
+*::before,
+*::after,
+html,
+body,
+button,
+input,
+optgroup,
+select,
+textarea,
+table,
+th,
+td,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+label,
+a {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  background-color: #F5F7FA;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Status badges */
+.badge-success {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.badge-warning {
+  background: #FFFBEB;
+  color: #D97706;
+}
+
+.badge-danger {
+  background: #FEF2F2;
+  color: #DC2626;
+}
+
+/* Full-width app content */
+.app-main-content {
+  width: 100%;
+  max-width: none;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+/* Global scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Disable native browser password reveal eye icons (Edge/IE/Chrome) to eliminate duplicate eye icons */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}

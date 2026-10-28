@@ -1,0 +1,40 @@
+node_modules
+.next
+dist
+storage
+.env
+.env.local
+*.log
+.DS_Store
+
+# Python environments and caches
+.venv/
+__pycache__/
+*.pyc
+
+# Local data that contains client emails, candidate resumes or production records
+*.db
+*.db-wal
+*.db-shm
+backups/
+backend/uploads/
+backend/storage/
+backend/test/raw_email_preview.txt
+
+# Build artifacts
+*.tsbuildinfo
+backend/dist/
+frontend/.next/
+
+# Test / Playwright artifacts
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Local logs under mail extraction
+Mail extraction/**/logs/
+Mail extraction/**/data/*.db
+Mail extraction/**/data/*.db-*
+
+# Junction (folder link) to "Mail extraction/devloper/devloper"; the real folder is committed
+Mail extraction/Auto_email_extraction

@@ -1,0 +1,48 @@
+{
+  "name": "resume-parser-module",
+  "version": "2.0.0",
+  "description": "Self-contained resume parsing module with Gemini AI and local deterministic fallback parser",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.11",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "5.3.0",
+    "mammoth": "1.13.0",
+    "multer": "2.5.0",
+    "pdf-parse": "2.4.5",
+    "pdfjs-dist": "6.4.299",
+    "tesseract.js": "7.0.0",
+    "word-extractor": "^1.0.4"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.16.20",
+    "@swc/jest": "^0.2.39",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^29.5.8",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^22.0.0",
+    "@types/supertest": "^6.0.2",
+    "jest": "30.5.2",
+    "supertest": "^6.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=24.22.1"
+  }
+}
